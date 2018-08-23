@@ -1,0 +1,12 @@
+a=int(input())
+suma=0
+if a<0:
+    for i in range(abs(a)+1):
+        suma=suma+i
+    suma=-suma+1
+elif a>0:
+    for i in range(a+1):
+        suma=suma+i
+else:
+    suma=1
+print(suma)
