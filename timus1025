@@ -1,3 +1,0 @@
-a=input().split()
-suma=int(a[0])+int(a[1])
-print(suma-(int(a[0])+1),suma-(int(a[1])+1))
