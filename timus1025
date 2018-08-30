@@ -1,0 +1,14 @@
+n=int(input())
+p=input().split()
+g=n//2+1
+a=[]
+for i in range(n):
+    a.append(int(p[i]))
+a2=[]
+for i in range(g):
+    a2.append(min(a))
+    a.remove(min(a))
+suma=0
+for i in range(len(a2)):
+    suma=suma+a2[i]//2+1
+print(suma)
