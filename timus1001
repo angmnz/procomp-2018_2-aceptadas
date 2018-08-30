@@ -1,0 +1,10 @@
+a=[]
+import sys
+for line in sys.stdin:
+    for var in line.split():
+        a.append(var) 
+for i in range(len(a)):
+    a[i]=int(a[i])
+a.reverse()
+for i in range(len(a)):
+    print("{0:.4f}".format(a[i]**(1/2)))
