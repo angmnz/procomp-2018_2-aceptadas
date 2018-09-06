@@ -1,0 +1,20 @@
+k=int(input())
+while k!=0:
+    punto=input().split()
+    for i in range(len(punto)):
+        punto[i]=int(punto[i])
+    for i in range(k):
+        coor=input().split()
+        for i in range(len(coor)):
+            coor[i]=int(coor[i])
+        if coor[0]>punto[0] and coor[1]>punto[1]:
+            print('NE')
+        elif coor[0]<punto[0] and coor[1]>punto[1]:
+            print('NO')
+        elif coor[0]<punto[0] and coor[1]<punto[1]:
+            print('SO')
+        elif coor[0]>punto[0] and coor[1]<punto[1]:
+            print('SE')
+        else:
+            print('divisa')
+    k=int(input())
