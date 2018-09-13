@@ -1,0 +1,21 @@
+n=int(input())
+w=input().split()
+mini=1000000
+if n==1:
+    print(int(w[0]))
+elif n==2:
+    print(abs(int(w[0])-int(w[1])))
+else:
+    for i in range(3,2**n-1):
+        suma1=0
+        suma2=0
+        mezcla=(n-len(bin(i)[2:]))*'0'+bin(i)[2:]
+        for j in range(n):
+            if mezcla[j]=='1':
+                suma1 += int(w[j])
+            else:
+                suma2 += int(w[j])
+        mini=min(mini,abs(suma1-suma2))
+        if mini==0:
+            break
+    print(mini)
