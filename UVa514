@@ -1,0 +1,31 @@
+N=int(input())
+while N!=0:
+    ns=input().split()
+    while ns!=['0']:
+        for i in range(len(ns)):
+            ns[i]=int(ns[i])  
+        A=list(range(1,N+1))
+        est=[]
+        B=[]
+        for i in range(N):
+            if ns[i] in A:
+                j=0
+                while A[0]!=ns[i]:
+                    est.append(A[0])
+                    A.remove(A[0])
+                    j+=1
+                est.append(A[0])
+                A.remove(A[0])
+            if ns[i]==est[len(est)-1]:
+                B.append(est[len(est)-1])
+                est.remove(est[len(est)-1])
+            else:
+                print('No')
+                break
+        if B==ns:
+            print('Yes')
+        ns=input().split()
+        for i in ns:
+            i=int(i)
+    print()
+    N=int(input())
