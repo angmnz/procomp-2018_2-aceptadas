@@ -1,0 +1,13 @@
+N=int(input())
+while N!=0:
+    L=list(map(int,input().split()))
+    L.sort()
+    suma=0
+    while len(L)!=1:
+        pro=L[0]+L[1]
+        suma+=pro
+        L=L[2:]
+        L.append(pro)
+        L.sort()
+    print(suma)
+    N=int(input())
