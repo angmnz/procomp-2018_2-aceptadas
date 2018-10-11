@@ -1,0 +1,17 @@
+import sys
+line='line'
+dic={}
+for line in sys.stdin:
+    if len(line.split())>0:
+        L=line.split()
+        dic[L[1]]=L[0]
+    else:
+        break
+pal=[]
+for line in sys.stdin:
+    pal.extend(line.split())
+for i in pal:
+    if i in dic:
+        print(dic[i])
+    else:
+        print('eh')
