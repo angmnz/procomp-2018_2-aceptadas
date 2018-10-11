@@ -1,0 +1,34 @@
+N=int(input())
+while N!=0:
+    L=[]
+    for i in range(N):
+        cur=input().split()
+        for i in range(len(cur)):
+            cur[i]=int(cur[i])
+        cur.sort()
+        L.append(cur)
+    L.sort()
+    dic={}
+    o=1
+    for i in range(N):
+        L0=L[i]
+        if str(L0) in dic:
+            o+=1
+            dic[str(L0)]=o
+            
+        else:
+            o=1
+            dic[str(L0)]=o
+    valores=list(dic.values())
+    maxi=max(valores)
+    if valores.count(maxi)==1:
+        print(maxi)
+    else:
+        suma=0
+        for i in valores:
+            if i==maxi:
+                suma+=i
+        print(suma)
+    N=int(input())
+        
+            
