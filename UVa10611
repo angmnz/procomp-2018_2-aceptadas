@@ -1,0 +1,24 @@
+
+from _bisect import *
+def find_lt(a, x):
+    'Find rightmost value less than x'
+    i = bisect_left(a, x)
+    if i:
+        return a[i-1]
+    else:
+        return 'X'
+def find_gt(a, x):
+    'Find leftmost value greater than x'
+    i = bisect_right(a, x)
+    if i != len(a):
+        return a[i]
+    else:
+        return 'X'
+N=int(input())
+h=list(map(int,input().split()))
+Q=int(input()) 
+q=list(map(int,input().split()))
+for i in range(Q):
+    sm=find_lt(h,q[i])
+    tl=find_gt(h,q[i])
+    print(sm,tl)
