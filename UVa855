@@ -1,0 +1,18 @@
+T=int(input())
+for i in range(T):
+    p=[]
+    q=[]
+    S,A,F=map(int,input().split())
+    for j in range(F):
+        a,b=map(int,input().split())
+        p.append(a)
+        q.append(b)
+    p.sort()
+    q.sort()       
+    if F%2==0:
+        s=p[int((len(p)-1)/2)]
+        av=q[int((len(q)-1)/2)]
+    else:
+        s=p[int(len(p)/2)]
+        av=q[int(len(q)/2)]
+    print(f'(Street: {s}, Avenue: {av})')
