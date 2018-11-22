@@ -1,0 +1,22 @@
+#UVA441
+def potencia(c):
+    if len(c) == 0:
+        return [[]]
+    r = potencia(c[:-1])
+    return r + [s + [c[-1]] for s in r]
+
+L=list(map(int,input().split()))
+while L[0]!=0:
+    L=L[1:]
+    pot=potencia(L)
+    comb=[]
+    for i in range(len(pot)):
+        if len(pot[i])==6:
+            pot[i].sort()      
+            comb.append(pot[i])
+    comb.sort()
+    for i in range(len(comb)):
+        print(' '.join(map(str,comb[i])))
+    L=list(map(int,input().split()))
+    if L[0]!=0:
+        print()
